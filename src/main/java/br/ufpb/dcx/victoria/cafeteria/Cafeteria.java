@@ -1,5 +1,7 @@
 package br.ufpb.dcx.victoria.cafeteria;
 
+import java.util.Objects;
+
 public class Cafeteria {
     private String nome;
     private String endereco;
@@ -37,5 +39,25 @@ public class Cafeteria {
 
     }
 
+    @Override
+    public String toString() {
+        return "Cafeteria [nome=" + nome + ", endereco=" + endereco + ", mesas=" + quantidadedeMesas + "]";
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cafeteria cafeteria = (Cafeteria) o;
+        return quantidadedeMesas == cafeteria.quantidadedeMesas &&
+                Objects.equals(nome,cafeteria.nome) &&
+                Objects.equals(endereco, cafeteria.endereco);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, endereco,quantidadedeMesas);
+    }
+    public boolean ehGrande() {
+        return this.quantidadedeMesas > 10;
+    }
 }
 
