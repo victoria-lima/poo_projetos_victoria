@@ -60,4 +60,3 @@ public class Cafeteria {
         return this.quantidadedeMesas > 10;
     }
 }
-
